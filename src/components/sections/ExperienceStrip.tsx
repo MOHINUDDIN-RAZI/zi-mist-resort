@@ -24,7 +24,7 @@ const items = [
 
 export default function ExperienceStrip() {
   return (
-    <section id="experience" className="relative z-20 py-12">
+    <section id="experience" className="relative z-20 py-10 md:py-12">
       <Container>
         <Card className="p-6 md:p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

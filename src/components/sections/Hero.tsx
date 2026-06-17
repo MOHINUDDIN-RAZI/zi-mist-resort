@@ -55,7 +55,7 @@ export default function Hero() {
             together.
           </p>
 
-          <div className="flex flex-col xl:flex-row gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <Button size="large">Book Your Stay</Button>
 
             <Button size="large" variant="outlined" sx={{ borderWidth: 2 }}>

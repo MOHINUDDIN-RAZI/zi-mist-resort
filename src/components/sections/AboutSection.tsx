@@ -16,7 +16,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-8 md:py-16"
+      className="py-10 md:py-12"
       style={{
         backgroundColor: colors.background.primary,
       }}

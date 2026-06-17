@@ -1,3 +1,4 @@
+import { colors } from "@/theme";
 import {
   FormControl,
   InputLabel,
@@ -17,6 +18,8 @@ interface SelectProps {
   value: string;
   options: Option[];
   onChange: (event: SelectChangeEvent) => void;
+  error?: boolean;
+  helperText?: string;
 }
 
 export default function Select({
@@ -24,9 +27,11 @@ export default function Select({
   value,
   options,
   onChange,
+  error,
+  helperText,
 }: SelectProps) {
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth error={error}>
       <InputLabel>{label}</InputLabel>
 
       <MuiSelect value={value} label={label} onChange={onChange}>
@@ -36,6 +41,11 @@ export default function Select({
           </MenuItem>
         ))}
       </MuiSelect>
+      {helperText && (
+        <p className="mt-1 text-sm" style={{ color: colors.error }}>
+          {helperText}
+        </p>
+      )}
     </FormControl>
   );
 }
