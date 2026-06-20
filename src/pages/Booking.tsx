@@ -235,7 +235,7 @@ ${form.message}
           onClick={() => navigate("/")}
           className="flex items-center gap-2 px-4 py-2 rounded-full my-8 ml-2   transition xl:my-6 xl:ml-16 cursor-pointer hover:opacity-60"
         >
-          <ArrowBackIcon fontSize="medium" />
+          <ArrowBackIcon fontSize="medium" className="hover:-translate-x-0.5" />
           back
         </button>
         <Container className="max-w-4xl">
@@ -280,111 +280,122 @@ ${form.message}
               onSubmit={handleSubmit}
               className="grid grid-cols-1 gap-6 md:grid-cols-2"
             >
-              <Input
-                name="name"
-                label="Full Name"
-                value={form.name}
-                onChange={handleInputChange}
-                helperText={errors.name}
-              />
-
-              <Input
-                name="email"
-                type="email"
-                label="Email Address"
-                value={form.email}
-                onChange={handleInputChange}
-                helperText={errors.email}
-              />
-
-              <Input
-                name="phone"
-                label="Phone Number"
-                value={form.phone}
-                onChange={handleInputChange}
-                helperText={errors.phone}
-              />
-
-              <Input
-                name="guests"
-                type="number"
-                label="Guests"
-                value={form.guests}
-                onChange={handleInputChange}
-              />
-
-              <Input
-                name="checkIn"
-                type="date"
-                label="Check In"
-                value={form.checkIn}
-                onChange={handleInputChange}
-                helperText={errors.checkIn}
-                sx={{
-                  "& input": {
-                    color: colors.text.primary,
-                  },
-
-                  "& input::-webkit-calendar-picker-indicator": {
-                    filter: "invert(1)",
-                    cursor: "pointer",
-                  },
-                }}
-                slotProps={{
-                  inputLabel: {
-                    shrink: true,
-                  },
-                  htmlInput: {
-                    min: localToday,
-                  },
-                }}
-              />
-
-              <Input
-                name="checkOut"
-                type="date"
-                label="Check Out"
-                value={form.checkOut}
-                onChange={handleInputChange}
-                helperText={errors.checkOut}
-                sx={{
-                  "& input": {
-                    color: colors.text.primary,
-                  },
-
-                  "& input::-webkit-calendar-picker-indicator": {
-                    filter: "invert(1)",
-                    cursor: "pointer",
-                  },
-                }}
-                slotProps={{
-                  inputLabel: {
-                    shrink: true,
-                  },
-                  htmlInput: {
-                    min: form.checkIn || localToday,
-                  },
-                }}
-              />
-
-              <div className="md:col-span-2">
-                <Select
-                  label="Select Room"
-                  value={form.room}
-                  onChange={handleSelectChange}
-                  options={roomOptions}
-                  helperText={errors.room}
+              <div className="h-[4.3rem]">
+                <Input
+                  name="name"
+                  label="Full Name"
+                  value={form.name}
+                  onChange={handleInputChange}
+                  helperText={errors.name}
+                />
+              </div>
+              <div className="h-[4.3rem]">
+                <Input
+                  name="email"
+                  type="email"
+                  label="Email Address"
+                  value={form.email}
+                  onChange={handleInputChange}
+                  helperText={errors.email}
                 />
               </div>
 
-              <div className="md:col-span-2">
-                <TextArea
-                  name="message"
-                  label="Special Requests"
-                  placeholder="Any special requirements?"
-                  value={form.message}
+              <div className="h-[4.3rem]">
+                <Input
+                  name="phone"
+                  label="Phone Number"
+                  value={form.phone}
+                  onChange={handleInputChange}
+                  helperText={errors.phone}
+                />
+              </div>
+
+              <div className="h-[4.3rem]">
+                <Input
+                  name="guests"
+                  type="number"
+                  label="Guests"
+                  value={form.guests}
                   onChange={handleInputChange}
                 />
+              </div>
+              <div className="h-[4.3rem]">
+                <Input
+                  name="checkIn"
+                  type="date"
+                  label="Check In"
+                  value={form.checkIn}
+                  onChange={handleInputChange}
+                  helperText={errors.checkIn}
+                  sx={{
+                    "& input": {
+                      color: colors.text.primary,
+                    },
+
+                    "& input::-webkit-calendar-picker-indicator": {
+                      filter: "invert(1)",
+                      cursor: "pointer",
+                    },
+                  }}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                    htmlInput: {
+                      min: localToday,
+                    },
+                  }}
+                />
+              </div>
+              <div className="h-[4.3rem]">
+                <Input
+                  name="checkOut"
+                  type="date"
+                  label="Check Out"
+                  value={form.checkOut}
+                  onChange={handleInputChange}
+                  helperText={errors.checkOut}
+                  sx={{
+                    "& input": {
+                      color: colors.text.primary,
+                    },
+
+                    "& input::-webkit-calendar-picker-indicator": {
+                      filter: "invert(1)",
+                      cursor: "pointer",
+                    },
+                  }}
+                  slotProps={{
+                    inputLabel: {
+                      shrink: true,
+                    },
+                    htmlInput: {
+                      min: form.checkIn || localToday,
+                    },
+                  }}
+                />
+              </div>
+              <div className="h-[4.3rem]">
+                <div className="md:col-span-2">
+                  <Select
+                    label="Select Room"
+                    value={form.room}
+                    onChange={handleSelectChange}
+                    options={roomOptions}
+                    helperText={errors.room}
+                  />
+                </div>
+              </div>
+              <div className="">
+                <div className="md:col-span-2">
+                  <TextArea
+                    name="message"
+                    label="Special Requests"
+                    placeholder="Any special requirements?"
+                    value={form.message}
+                    onChange={handleInputChange}
+                  />
+                </div>
               </div>
 
               <div className="md:col-span-2 mt-4">

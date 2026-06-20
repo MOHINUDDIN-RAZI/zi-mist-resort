@@ -1,8 +1,10 @@
 import { Button, Container } from "@/components/ui";
 import { typography, colors } from "@/theme";
 import backgroundImage from "@/assets/images/background.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="relative  overflow-hidden md:pb-40">
       <img
@@ -56,9 +58,20 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4">
-            <Button size="large">Book Your Stay</Button>
+            <Button size="large" onClick={() => navigate("/booking")}>
+              Book Your Stay
+            </Button>
 
-            <Button size="large" variant="outlined" sx={{ borderWidth: 2 }}>
+            <Button
+              size="large"
+              variant="outlined"
+              sx={{ borderWidth: 2 }}
+              onClick={() =>
+                document.getElementById("rooms")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+            >
               Explore Rooms
             </Button>
           </div>

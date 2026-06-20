@@ -14,9 +14,17 @@ export default function SimpleNavbar() {
       }}
     >
       <Container className="flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link
+          to="/"
+          className="flex items-center gap-0.5 group relative hover:scale-110 transition-transform duration-300 -ml-4 md:ml-0"
+        >
           <img src={logo} className="w-18 h-18 object-contain" />
-          <span style={{ color: colors.text.primary }}>Mist Resort</span>
+          <h1
+            className="absolute text-[12px] tracking-wide transition-colors duration-300 w-60 top-7 left-13"
+            style={{ color: colors.text.primary }}
+          >
+            Mist Resort
+          </h1>
         </Link>
       </Container>
     </header>

@@ -1,32 +1,11 @@
 import { Button, Container } from "@/components/ui";
 import { colors, typography } from "@/theme";
 
-import room1 from "@/assets/images/room1.png";
-import room2 from "@/assets/images/room2.png";
-import room3 from "@/assets/images/room3.png";
-
-const rooms = [
-  {
-    title: "Deluxe Cottage",
-    image: room1,
-    description: "Cozy retreats surrounded by lush greenery.",
-    price: "₹12,000 / night",
-  },
-  {
-    title: "Family Suite",
-    image: room3,
-    description: "Spacious stays crafted for memorable escapes.",
-    price: "₹16,000 / night",
-  },
-  {
-    title: "Forest Villa",
-    image: room2,
-    description: "Private luxury with breathtaking views.",
-    price: "₹18,000 / night",
-  },
-];
+import { rooms } from "@/data/rooms";
+import { useNavigate } from "react-router-dom";
 
 export default function RoomsSection() {
+  const navigate = useNavigate();
   return (
     <section
       id="rooms"
@@ -99,7 +78,12 @@ export default function RoomsSection() {
                   {room.description}
                 </p>
 
-                <Button fullWidth variant="outlined" sx={{ borderWidth: 2 }}>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  sx={{ borderWidth: 2 }}
+                  onClick={() => navigate(`/rooms/${room.slug}`)}
+                >
                   View Details
                 </Button>
               </div>
