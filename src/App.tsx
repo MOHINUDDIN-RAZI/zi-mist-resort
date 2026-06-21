@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import ChatBot from "./components/chatbot/ChatBot";
 import AppRoutes from "./routes/AppRoutes";
 import { Toaster } from "react-hot-toast";
 function App() {
+  useEffect(() => {
+    const disableDrag = (e: DragEvent) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener("dragstart", disableDrag);
+
+    return () => {
+      document.removeEventListener("dragstart", disableDrag);
+    };
+  }, []);
   return (
     <>
       <Toaster
