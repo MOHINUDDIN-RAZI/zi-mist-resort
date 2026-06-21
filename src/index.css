@@ -147,3 +147,27 @@ body {
     transform: scale(1);
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C9A86A, #C9A86A);
+  border-radius: 999px;
+  border: 2px solid #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #C9A86A, #C9A86A);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C9A86A #1d1d1d;
+}
