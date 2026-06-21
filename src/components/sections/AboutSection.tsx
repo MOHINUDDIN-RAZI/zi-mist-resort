@@ -75,8 +75,27 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <Button variant="outlined" sx={{ borderWidth: 2 }}>
-              Discover More
+            <Button
+              variant="outlined"
+              sx={{ borderWidth: 2 }}
+              onClick={() => {
+                const el = document.querySelector("#rooms");
+                if (!el) return;
+
+                const navbar = document.querySelector("header");
+                const navbarHeight = navbar?.clientHeight ?? 80;
+
+                window.scrollTo({
+                  top:
+                    el.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    navbarHeight -
+                    16,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              Explore Our Rooms
             </Button>
           </div>
         </div>
