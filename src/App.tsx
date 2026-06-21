@@ -1,3 +1,4 @@
+import ChatBot from "./components/chatbot/ChatBot";
 import AppRoutes from "./routes/AppRoutes";
 import { Toaster } from "react-hot-toast";
 function App() {
@@ -44,6 +45,7 @@ function App() {
         }}
       />
       <AppRoutes />
+      <ChatBot />
     </>
   );
 }

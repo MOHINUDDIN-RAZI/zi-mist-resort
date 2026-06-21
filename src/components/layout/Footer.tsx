@@ -101,7 +101,7 @@ export default function Footer() {
             >
               <p>📍 Araku Valley, Andhra Pradesh</p>
               <p>📞 +91 8867350524</p>
-              <p>✉️ bookings@zimistresort.com</p>
+              <p>✉️ zimistresort@gmail.com</p>
             </div>
 
             <div className="mt-5">
