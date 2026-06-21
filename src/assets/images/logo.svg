@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+
+    <!-- Premium Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6C78A"/>
+      <stop offset="50%" stop-color="#C9A86A"/>
+      <stop offset="100%" stop-color="#9B7A45"/>
+    </linearGradient>
+
+    <!-- Soft Mist Gradient -->
+    <linearGradient id="mist" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- Subtle Background Mist (very light, not dominant) -->
+  <path
+    d="M60,280 Q180,240 260,270 T440,250 L440,300 Q300,320 200,295 T60,310 Z"
+    fill="url(#mist)"
+    opacity="0.6"
+  />
+
+  <!-- Main Z Monogram -->
+  <g>
+    <!-- Clean Z Stroke -->
+    <path
+      d="M140,170 L360,170 L140,330 L360,330"
+      fill="none"
+      stroke="url(#goldGrad)"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Elegant Accent Core -->
+    <path
+      d="M180,300 L240,180 L290,250 Z"
+      fill="url(#goldGrad)"
+      opacity="0.9"
+    />
+  </g>
+
+</svg>
